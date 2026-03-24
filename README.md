@@ -75,7 +75,7 @@ DevOps:   CORS Proxy + Error Boundaries + Loading States + Responsive Breakpoint
 ### **Core App**
 | Dashboard | Invoices List | Create Invoice |
 |-----------|---------------|----------------|
-| ![Dashboard](screenshots/dashboard.png) | ![Invoices](screenshots/invoices.png) | ![Create Invoice](client/SCREENSHOT/CREATE-INVOICE.png) |
+| ![Dashboard](client/SCREENSHOT/DASHBOARD.png) | ![Invoices](client/SCREENSHOT/INVOICE.png) | ![Create Invoice](client/SCREENSHOT/CREATE-INVOICE.png) |
 
 ### **Specialized Modules**
 | GST Filing | CA Collaboration | Settings |
