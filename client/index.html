@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinFlow — Finance Autopilot for Indian SMBs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --sage: #1D9E75; --sage-dark: #0F6E56; --sage-light: #E1F5EE; --sage-mid: #5DCAA5;
+        --ink: #0f1a12; --ink2: #3a4a3e; --ink3: #6b7c71;
+        --off: #f7f6f2; --white: #ffffff;
+        --gold: #BA7517; --gold-light: #FAEEDA;
+        --red: #E24B4A; --red-light: #FCEBEB;
+        --blue: #185FA5; --blue-light: #E6F1FB;
+        --border: rgba(15,26,18,0.09);
+        --shadow-sm: 0 1px 4px rgba(15,26,18,0.07);
+        --shadow-md: 0 4px 20px rgba(15,26,18,0.09);
+        --shadow-lg: 0 12px 48px rgba(15,26,18,0.12);
+        --radius: 12px; --radius-sm: 8px;
+        --font-serif: 'DM Serif Display', serif;
+        --font-sans: 'DM Sans', sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+      }
+      html { font-family: var(--font-sans); background: var(--off); color: var(--ink); }
+      body { min-height: 100vh; }
+      #root { min-height: 100vh; }
+      button { font-family: var(--font-sans); cursor: pointer; }
+      input, select, textarea { font-family: var(--font-sans); }
+      a { text-decoration: none; color: inherit; }
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(15,26,18,0.15); border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
