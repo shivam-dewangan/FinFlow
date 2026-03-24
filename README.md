@@ -2,7 +2,7 @@
 
 ![Hero Banner](screenshots/hero-dashboard.png)
 
-**Indian SMBs ka nightmare: Manual invoicing, GST filing, CA coordination, cashflow tracking... सब Excel mein! 😩**
+
 
 **FinFlow fixes EVERYTHING** - One dashboard mein **invoice → GST → reconciliation → CA collab** - fully automated!
 
@@ -93,7 +93,7 @@ DevOps:   CORS Proxy + Error Boundaries + Loading States + Responsive Breakpoint
 6. Invite CA → Permissions matrix ✓
 ```
 
-## 🎪 **Easter Eggs** (Maza wale Features!)
+## 🎪 **Easter Eggs** 
 ```
 ✅ Invoice numbers auto-increment: INV/0001 → INV/0002
 ✅ Inter-state auto-detects IGST ✓
