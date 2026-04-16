@@ -23,7 +23,7 @@ services:
     container_name: mern_server
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
       NODE_ENV: production
       MONGO_URI: mongodb://admin:secret123@mongodb:27017/mern_db?authSource=admin
