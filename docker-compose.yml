@@ -1,52 +1,92 @@
-version: '3.8'
+ubuntu@ip-172-31-4-18:~/FinFlow$ ls
+README.md  client  docker-compose.yml  package-lock.json  server
+ubuntu@ip-172-31-4-18:~/FinFlow$ vim docker-compose.yml
 
-services:
-  mongodb:
-    image: mongo:7
-    container_name: mern_db
-    restart: unless-stopped
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: secret123
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   server:
-    build: ./server
-    container_name: mern_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+    image: finflow-server:1.0
+    container_name: finflow-server
+
     restart: unless-stopped
+
+    env_file:
+      - ./server/.env
+
     ports:
-      - "5001:5001"
-    environment:
-      NODE_ENV: production
-      MONGO_URI: mongodb://admin:secret123@mongodb:27017/mern_db?authSource=admin
+      - "5000:5000"
+
     depends_on:
-      mongodb:
-        condition: service_healthy
+      - mongo
+
     networks:
-      - mern_network
+      - finflow-network
 
   client:
-    build: ./client
-    container_name: mern_client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+    image: finflow-client:1.0
+    container_name: finflow-client
+
     restart: unless-stopped
+
     ports:
-      - "80:80"
+      - "3000:80"
+
     depends_on:
       - server
+
     networks:
-      - mern_network
+      - finflow-network
 
 volumes:
   mongo_data:
 
-networks:
-  mern_network:
-    driver: bridge
+"docker-compose.yml" 64L, 884B                                                                                                  34,15         84%
