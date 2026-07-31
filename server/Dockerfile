@@ -1,12 +1,24 @@
-FROM node:20-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+FROM node:22-alpine
 
-FROM node:20-alpine
+# Create app directory
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+
+# Environment
+ENV NODE_ENV=production
+
+# Copy package files
+COPY package*.json ./
+
+# Install production dependencies only
+RUN npm ci --omit=dev && \
+    npm cache clean --force
+
+# Copy source code
 COPY . .
-EXPOSE 5000
+
+# Use non-root user
 USER node
+
+EXPOSE 5000
+Dockerfile
 CMD ["node", "server.js"]
