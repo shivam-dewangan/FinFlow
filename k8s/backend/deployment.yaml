@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: finflow
+  labels:
+    app: backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+        - name: backend
+          image: shivamaws2005/finflow-server:v2
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5000
+
+          envFrom:
+            - configMapRef:
+                name: finflow-config
+
+            - secretRef:
+                name: finflow-secret
+
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "128Mi"
+
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+
+            initialDelaySeconds: 10
+            periodSeconds: 5

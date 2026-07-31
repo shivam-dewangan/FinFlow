@@ -20,5 +20,5 @@ COPY . .
 USER node
 
 EXPOSE 5000
-Dockerfile
+
 CMD ["node", "server.js"]
