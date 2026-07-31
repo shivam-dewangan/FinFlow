@@ -25,7 +25,7 @@ variable "cluster_name" {
 variable "instance_type" {
   description = "Worker node instance type"
   type        = string
-  default     = "t3.medium"
+  default     = "m7i-flex.large"
 }
 
 variable "node_desired_size" {
